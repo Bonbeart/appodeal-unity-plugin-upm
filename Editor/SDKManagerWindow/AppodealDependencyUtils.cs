@@ -194,7 +194,7 @@ namespace AppodealStack.UnityEditor.SDKManager
                 reader.Close();
             }
 
-            contentString = Regex.Replace(contentString, searchText, replaceText);
+            contentString = Regex.Replace(contentString.Replace("\r", ""), searchText, replaceText);
 
             using (var writer = new StreamWriter(filePath))
             {
